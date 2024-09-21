@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://dgdv2agia8pw0"]
+
+[ext_resource type="Texture2D" uid="uid://obnvlmkiplkk" path="res://terrain/base color 1.png" id="1_73qhg"]
+[ext_resource type="Script" path="res://Scenes/options.gd" id="1_osrnh"]
+[ext_resource type="FontFile" uid="uid://dpcauoqisurb6" path="res://Font/Early GameBoy.ttf" id="2_mr8lh"]
+[ext_resource type="Texture2D" uid="uid://duew6c1sdr35q" path="res://UI/button_exit.png" id="4_b5gae"]
+[ext_resource type="Texture2D" uid="uid://beanwiggr6dm7" path="res://UI/button_credits.png" id="5_latpf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_63w0c"]
+texture = ExtResource("4_b5gae")
+region_rect = Rect2(0, 1, 40, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y5k0b"]
+texture = ExtResource("4_b5gae")
+region_rect = Rect2(42, 3, 40, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s3fsh"]
+texture = ExtResource("5_latpf")
+region_rect = Rect2(0, 1, 64, 30)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_88vyt"]
+texture = ExtResource("5_latpf")
+region_rect = Rect2(66, 3, 64, 28)
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_osrnh")
+
+[node name="BaseColor1" type="Sprite2D" parent="."]
+position = Vector2(79.5, 72.5)
+scale = Vector2(9.9375, 9.0625)
+texture = ExtResource("1_73qhg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 9.0
+offset_right = 292.86
+offset_bottom = 116.0
+theme_override_colors/default_color = Color(0.141176, 0.615686, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_mr8lh")
+theme_override_font_sizes/normal_font_size = 8
+text = "OPTIONS
+"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 87.0
+offset_right = 93.0
+offset_bottom = 102.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_63w0c")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y5k0b")
+theme_override_styles/normal = SubResource("StyleBoxTexture_63w0c")
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 70.0
+offset_right = 95.0
+offset_bottom = 85.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_s3fsh")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_88vyt")
+theme_override_styles/normal = SubResource("StyleBoxTexture_s3fsh")
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
