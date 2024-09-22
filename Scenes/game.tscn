@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://hsulrpuj1e55"]
+[gd_scene load_steps=10 format=4 uid="uid://hsulrpuj1e55"]
 
 [ext_resource type="Script" path="res://Scripts/gamemanager.gd" id="1_66f27"]
 [ext_resource type="PackedScene" uid="uid://cusyaxjyyeqt1" path="res://Scenes/character_body_2d.tscn" id="1_a3fy5"]
 [ext_resource type="Texture2D" uid="uid://b0p2dtagcpn8b" path="res://terrain/brick.png" id="1_eesbe"]
 [ext_resource type="Texture2D" uid="uid://cfgc1drovdmf8" path="res://terrain/mid.png" id="2_ib4ta"]
 [ext_resource type="PackedScene" uid="uid://cjqrf26ktgyj8" path="res://Scenes/wolf.tscn" id="5_wm1re"]
+[ext_resource type="PackedScene" uid="uid://o7wp2udyot45" path="res://Scenes/cop.tscn" id="6_p3caq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_grnec"]
 texture = ExtResource("1_eesbe")
@@ -34,4 +35,7 @@ position = Vector2(4, -4)
 position = Vector2(76, 63)
 
 [node name="wolf" parent="." instance=ExtResource("5_wm1re")]
-position = Vector2(102, -66)
+position = Vector2(119, -57)
+
+[node name="cop" parent="." instance=ExtResource("6_p3caq")]
+position = Vector2(81, -114)

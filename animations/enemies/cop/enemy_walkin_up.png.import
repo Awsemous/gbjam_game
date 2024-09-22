@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g6y82qcaw23s"
-path="res://.godot/imported/bruhhhhh.png-3a59203c2d2285e761c1112b31d4784a.ctex"
+uid="uid://1t37aduiydv5"
+path="res://.godot/imported/enemy_walkin_up.png-9d65ba3c91d394c034ff8c0a497c46ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/enemies/bruhhhhh.png"
-dest_files=["res://.godot/imported/bruhhhhh.png-3a59203c2d2285e761c1112b31d4784a.ctex"]
+source_file="res://animations/enemies/cop/enemy_walkin_up.png"
+dest_files=["res://.godot/imported/enemy_walkin_up.png-9d65ba3c91d394c034ff8c0a497c46ef.ctex"]
 
 [params]
 

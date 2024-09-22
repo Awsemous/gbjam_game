@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://cjqrf26ktgyj8"]
 
-[ext_resource type="Texture2D" uid="uid://g6y82qcaw23s" path="res://animations/enemies/bruhhhhh.png" id="1_50y8f"]
-[ext_resource type="Texture2D" uid="uid://dobyv5lkq0m16" path="res://animations/enemies/bruhhhh2.png" id="2_tvrqo"]
+[ext_resource type="Texture2D" uid="uid://g6y82qcaw23s" path="res://animations/enemies/wolf/bruhhhhh.png" id="1_50y8f"]
+[ext_resource type="Texture2D" uid="uid://dobyv5lkq0m16" path="res://animations/enemies/wolf/bruhhhh2.png" id="2_tvrqo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcp5m"]
 atlas = ExtResource("1_50y8f")

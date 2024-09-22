@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dobyv5lkq0m16"
-path="res://.godot/imported/bruhhhh2.png-6f8133dbed2f2fea4daa3ccadb4e4507.ctex"
+path="res://.godot/imported/bruhhhh2.png-3aef4210c181692c2247a9f51a18b071.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/enemies/bruhhhh2.png"
-dest_files=["res://.godot/imported/bruhhhh2.png-6f8133dbed2f2fea4daa3ccadb4e4507.ctex"]
+source_file="res://animations/enemies/wolf/bruhhhh2.png"
+dest_files=["res://.godot/imported/bruhhhh2.png-3aef4210c181692c2247a9f51a18b071.ctex"]
 
 [params]
 
