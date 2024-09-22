@@ -1,13 +1,13 @@
 [gd_scene load_steps=59 format=3 uid="uid://cusyaxjyyeqt1"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_ukakq"]
-[ext_resource type="Texture2D" uid="uid://dpkyyua4dwhls" path="res://animations/characters/main character/main_dying.png" id="2_6tr0t"]
-[ext_resource type="Texture2D" uid="uid://d1rmxlmo27lgt" path="res://animations/characters/main character/skelerrrrr.png" id="3_b76g1"]
-[ext_resource type="Texture2D" uid="uid://w8wgcqlj6uyk" path="res://animations/characters/main character/main_walkin_down.png" id="4_fpu8r"]
+[ext_resource type="Texture2D" uid="uid://dpkyyua4dwhls" path="res://animations/characters/main character/character/main_dying.png" id="2_6tr0t"]
+[ext_resource type="Texture2D" uid="uid://d1rmxlmo27lgt" path="res://animations/characters/main character/character/skelerrrrr.png" id="3_b76g1"]
+[ext_resource type="Texture2D" uid="uid://w8wgcqlj6uyk" path="res://animations/characters/main character/character/main_walkin_down.png" id="4_fpu8r"]
 [ext_resource type="Texture2D" uid="uid://nsqhq251l2jq" path="res://animations/characters/main character/scare/scare 1.png" id="4_hon7p"]
 [ext_resource type="Texture2D" uid="uid://brm0t8otm2bcg" path="res://animations/characters/main character/scare/main_scaring2.png" id="5_20pab"]
-[ext_resource type="Texture2D" uid="uid://blkmlsm15qt7f" path="res://animations/characters/main character/main_walkin.png" id="5_720p2"]
-[ext_resource type="Texture2D" uid="uid://he7stbiqdhys" path="res://animations/characters/main character/main_walkin_up.png" id="6_0vpmr"]
+[ext_resource type="Texture2D" uid="uid://blkmlsm15qt7f" path="res://animations/characters/main character/character/main_walkin.png" id="5_720p2"]
+[ext_resource type="Texture2D" uid="uid://he7stbiqdhys" path="res://animations/characters/main character/character/main_walkin_up.png" id="6_0vpmr"]
 [ext_resource type="Texture2D" uid="uid://b4bn5cdhjxclo" path="res://animations/characters/main character/scare/main_scaring3.png" id="6_c7l4t"]
 [ext_resource type="Texture2D" uid="uid://driws8fo5ww23" path="res://animations/characters/main character/scare/main_scaring4.png" id="7_o03l4"]
 [ext_resource type="Texture2D" uid="uid://bas5sl8melmws" path="res://animations/characters/main character/scare/main_scaring5.png" id="8_bnqhw"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dq0rmjofmoyee" path="res://animations/characters/main character/scare/main_scaring8.png" id="11_sswn4"]
 [ext_resource type="Texture2D" uid="uid://cifeuifxgil0p" path="res://animations/characters/main character/scare/main_scaring9.png" id="12_uagga"]
 [ext_resource type="Texture2D" uid="uid://usgqeh45u3ov" path="res://animations/characters/main character/scare/main_scaring10.png" id="13_sj06y"]
-[ext_resource type="Texture2D" uid="uid://dhxe1yh77j3me" path="res://animations/characters/main character/happiness.png" id="14_k7shf"]
+[ext_resource type="Texture2D" uid="uid://dhxe1yh77j3me" path="res://animations/characters/main character/character/happiness.png" id="14_k7shf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fasj0"]
 atlas = ExtResource("2_6tr0t")
@@ -324,11 +324,11 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ag3v6"]
 radius = 4.0
-height = 22.0
+height = 18.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mxxrc"]
-radius = 4.0
-height = 24.0
+radius = 6.0
+height = 22.0
 
 [node name="SkeleyBoy" type="CharacterBody2D"]
 script = ExtResource("1_ukakq")
@@ -337,7 +337,7 @@ script = ExtResource("1_ukakq")
 position = Vector2(77, 68)
 sprite_frames = SubResource("SpriteFrames_18oxe")
 animation = &"scare"
-frame_progress = 0.982342
+frame_progress = 0.655386
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(78, 68)
@@ -349,3 +349,5 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
 position = Vector2(78, 68)
 shape = SubResource("CapsuleShape2D_mxxrc")
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

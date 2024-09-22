@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1rmxlmo27lgt"
-path="res://.godot/imported/skelerrrrr.png-76bbd150a9fee9d97860eb39f93b894e.ctex"
+uid="uid://dsnpcvyyv10n0"
+path="res://.godot/imported/heart31.png-9e1e42e66cd633160448df7c5f5890cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/characters/main character/skelerrrrr.png"
-dest_files=["res://.godot/imported/skelerrrrr.png-76bbd150a9fee9d97860eb39f93b894e.ctex"]
+source_file="res://animations/characters/main character/heart container/heart31.png"
+dest_files=["res://.godot/imported/heart31.png-9e1e42e66cd633160448df7c5f5890cc.ctex"]
 
 [params]
 

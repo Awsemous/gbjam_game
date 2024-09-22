@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+class_name Player
+
+signal healthChanged
 
 @onready var animate: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -66,8 +69,12 @@ func _physics_process(delta):
 	elif is_moving == false:
 		animate.play("idle")
 
-	#func _on_hurt_box_are_entered(area):
-		#if area.name == "hitbox"
-	#	currentHealth -= 1
-		#elif currentHealth = 0
-		#animate.play("death")
+func _on_hurtbox_area_entered(area):
+	if area.name == "hitbox":
+		currentHealth -= 1
+		if currentHealth <= 0:
+			currentHealth = maxHealth
+		
+	print_debug(currentHealth)
+	healthChanged.emit()
+			

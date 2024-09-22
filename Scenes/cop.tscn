@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://o7wp2udyot45"]
+[gd_scene load_steps=25 format=3 uid="uid://o7wp2udyot45"]
 
 [ext_resource type="Script" path="res://cop.gd" id="1_yifmp"]
 [ext_resource type="Texture2D" uid="uid://4f3l0gwu1tj5" path="res://animations/enemies/cop/police_walkin_and_idle.png" id="2_bek6a"]
@@ -147,6 +147,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sq68t"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hbvl4"]
+radius = 8.0
+height = 24.0
+
 [node name="cop" type="CharacterBody2D"]
 script = ExtResource("1_yifmp")
 
@@ -155,3 +163,14 @@ position = Vector2(78, 71)
 sprite_frames = SubResource("SpriteFrames_gwj3u")
 animation = &"walking_up"
 frame_progress = 0.176706
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(78, 72)
+shape = SubResource("CapsuleShape2D_sq68t")
+
+[node name="hitbox" type="Area2D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(78, 72)
+shape = SubResource("CapsuleShape2D_hbvl4")

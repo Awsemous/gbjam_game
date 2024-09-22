@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blkmlsm15qt7f"
-path="res://.godot/imported/main_walkin.png-113c0ddcf78efbe4295be06d8875b6bc.ctex"
+uid="uid://54t7l1wtlf3"
+path="res://.godot/imported/heart12.png-fbe7e54064960bc4afeb9e26601fbc51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://animations/characters/main character/main_walkin.png"
-dest_files=["res://.godot/imported/main_walkin.png-113c0ddcf78efbe4295be06d8875b6bc.ctex"]
+source_file="res://animations/characters/main character/heart container/heart12.png"
+dest_files=["res://.godot/imported/heart12.png-fbe7e54064960bc4afeb9e26601fbc51.ctex"]
 
 [params]
 
