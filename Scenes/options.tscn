@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dgdv2agia8pw0"]
 
 [ext_resource type="Texture2D" uid="uid://obnvlmkiplkk" path="res://terrain/base color 1.png" id="1_73qhg"]
-[ext_resource type="Script" path="res://Scenes/options.gd" id="1_osrnh"]
+[ext_resource type="Script" path="res://Scripts/options.gd" id="1_osrnh"]
 [ext_resource type="FontFile" uid="uid://dpcauoqisurb6" path="res://Font/Early GameBoy.ttf" id="2_mr8lh"]
 [ext_resource type="Texture2D" uid="uid://duew6c1sdr35q" path="res://UI/button_exit.png" id="4_b5gae"]
 [ext_resource type="Texture2D" uid="uid://beanwiggr6dm7" path="res://UI/button_credits.png" id="5_latpf"]

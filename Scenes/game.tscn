@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://hsulrpuj1e55"]
 
 [ext_resource type="Script" path="res://Scripts/gamemanager.gd" id="1_66f27"]
-[ext_resource type="PackedScene" uid="uid://cusyaxjyyeqt1" path="res://Scenes/character_body_2d.tscn" id="1_a3fy5"]
+[ext_resource type="PackedScene" uid="uid://cusyaxjyyeqt1" path="res://Scenes/player.tscn" id="1_a3fy5"]
 [ext_resource type="Texture2D" uid="uid://b0p2dtagcpn8b" path="res://terrain/brick.png" id="1_eesbe"]
 [ext_resource type="Texture2D" uid="uid://cfgc1drovdmf8" path="res://terrain/mid.png" id="2_ib4ta"]
 [ext_resource type="PackedScene" uid="uid://cjqrf26ktgyj8" path="res://Scenes/wolf.tscn" id="5_wm1re"]
