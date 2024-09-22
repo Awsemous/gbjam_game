@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://hsulrpuj1e55"]
+[gd_scene load_steps=14 format=4 uid="uid://hsulrpuj1e55"]
 
 [ext_resource type="Script" path="res://Scripts/gamemanager.gd" id="1_66f27"]
 [ext_resource type="PackedScene" uid="uid://cusyaxjyyeqt1" path="res://Scenes/player.tscn" id="1_a3fy5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://Scenes/progress_bar.gd" id="7_rgenb"]
 [ext_resource type="Texture2D" uid="uid://dcfybllfbg7yu" path="res://animations/characters/main character/heart container/heart1.png" id="8_71idp"]
 [ext_resource type="Texture2D" uid="uid://dsnpcvyyv10n0" path="res://animations/characters/main character/heart container/heart31.png" id="9_ij8vh"]
+[ext_resource type="Script" path="res://Scenes/texture_progress_bar.gd" id="10_hpday"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_grnec"]
 texture = ExtResource("1_eesbe")
@@ -67,3 +68,4 @@ offset_right = 160.0
 offset_bottom = 40.0
 texture_under = ExtResource("8_71idp")
 texture_progress = ExtResource("9_ij8vh")
+script = ExtResource("10_hpday")
