@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://c56b66go642ie"]
+
+[ext_resource type="Script" path="res://Scenes/gamejam_splash.gd" id="1_47w2d"]
+[ext_resource type="Texture2D" uid="uid://bsa6sjj55kfoa" path="res://UI/xfj0Pz.png" id="1_xbogh"]
+[ext_resource type="Texture2D" uid="uid://obnvlmkiplkk" path="res://terrain/base color 1.png" id="2_u0v1l"]
+
+[sub_resource type="Animation" id="Animation_731do"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Xfj0Pz:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lrf6e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Xfj0Pz:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ytbqs"]
+_data = {
+"RESET": SubResource("Animation_lrf6e"),
+"fade": SubResource("Animation_731do")
+}
+
+[node name="gamejam splash" type="Node2D"]
+script = ExtResource("1_47w2d")
+
+[node name="BaseColor1" type="Sprite2D" parent="."]
+position = Vector2(81.5, 79)
+scale = Vector2(10.6875, 10.25)
+texture = ExtResource("2_u0v1l")
+
+[node name="Xfj0Pz" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+texture = ExtResource("1_xbogh")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ytbqs")
+}
+autoplay = "fade"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

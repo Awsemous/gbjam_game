@@ -5,20 +5,28 @@ class_name Player
 signal healthChanged
 
 @onready var animate: AnimatedSprite2D = $AnimatedSprite2D
+@onready var effects = $effects
+
 
 const SPEED = 50
 var is_moving:bool = false
 var dir:String = "none"
+var isAttacking: bool = false
 
 @export var maxHealth = 3
 @onready var currentHealth: int  = maxHealth
+@onready var hurtTimer = $hurtTimer
+var isHurt: bool = false
+var enemyCollisions = []
 
 func _ready():
-	pass
+	effects.play("RESET")
 	
 
 func _physics_process(delta):
-	pass
+	if !isHurt:
+		for enemyArea in enemyCollisions:
+			hurtByEnemy(enemyArea)
 	
 	
 	
@@ -38,8 +46,13 @@ func _physics_process(delta):
 		velocity = Vector2.DOWN * SPEED
 		is_moving = true
 		dir = "down"
-	elif Input.is_action_pressed("a"):
+	elif Input.is_action_pressed("attack"):
 		animate.play("scare")
+		isAttacking = true
+		await animate.animation_finished
+		animate.stop()
+		isAttacking = false
+		
 	else:
 		velocity = Vector2.ZERO
 		is_moving = false
@@ -49,6 +62,8 @@ func _physics_process(delta):
 	
 	
 	#run animations
+	if isAttacking: return 
+	
 	if is_moving == true:
 		if dir == "left":
 			animate.play("walking_side")
@@ -69,12 +84,37 @@ func _physics_process(delta):
 	elif is_moving == false:
 		animate.play("idle")
 
+func hurtByEnemy(area):
+	currentHealth -= 1
+	if currentHealth < 0:
+		currentHealth = maxHealth
+	print_debug(currentHealth)
+	healthChanged.emit()
+	isHurt = true
+	effects.play("hurtBlink")
+	hurtTimer.start()
+	await hurtTimer.timeout
+	effects.play("RESET")
+	isHurt = false
+
 func _on_hurtbox_area_entered(area):
+
 	if area.name == "hitbox":
+		enemyCollisions.append(area)
 		currentHealth -= 1
 		if currentHealth <= 0:
 			currentHealth = maxHealth
-		
 	print_debug(currentHealth)
 	healthChanged.emit()
+	isHurt = true
+	effects.play("hurtBlink")
+	hurtTimer.start()
+	await hurtTimer.timeout
+	effects.play("RESET")
+	isHurt = false
+	
 			
+
+
+func _on_hurtbox_area_exited(area):
+	enemyCollisions.erase(area)

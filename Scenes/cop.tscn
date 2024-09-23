@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://o7wp2udyot45"]
 
-[ext_resource type="Script" path="res://cop.gd" id="1_yifmp"]
+[ext_resource type="Script" path="res://Scripts/cop.gd" id="1_yifmp"]
 [ext_resource type="Texture2D" uid="uid://4f3l0gwu1tj5" path="res://animations/enemies/cop/police_walkin_and_idle.png" id="2_bek6a"]
 [ext_resource type="Texture2D" uid="uid://dpmcaanjjxrjj" path="res://animations/enemies/cop/enemy_walkin_down.png" id="3_anqnu"]
 [ext_resource type="Texture2D" uid="uid://1t37aduiydv5" path="res://animations/enemies/cop/enemy_walkin_up.png" id="4_l3i21"]

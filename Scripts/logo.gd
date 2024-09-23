@@ -1,9 +1,7 @@
 extends Node2D
 
 
-func _input(event):
-	if(event is InputEventKey):
-		go_title_screen()
+
 		
 
 func go_title_screen():
