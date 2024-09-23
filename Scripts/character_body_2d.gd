@@ -46,12 +46,10 @@ func _physics_process(delta):
 		velocity = Vector2.DOWN * SPEED
 		is_moving = true
 		dir = "down"
-	elif Input.is_action_pressed("attack"):
+	elif Input.is_action_just_pressed("attack"):
 		animate.play("scare")
 		isAttacking = true
-		await animate.animation_finished
-		animate.stop()
-		isAttacking = false
+		
 		
 	else:
 		velocity = Vector2.ZERO
@@ -83,6 +81,7 @@ func _physics_process(delta):
 	#idle animation
 	elif is_moving == false:
 		animate.play("idle")
+		isAttacking = false
 
 func hurtByEnemy(area):
 	currentHealth -= 1
@@ -118,3 +117,8 @@ func _on_hurtbox_area_entered(area):
 
 func _on_hurtbox_area_exited(area):
 	enemyCollisions.erase(area)
+
+
+func _on_animated_sprite_2d_animation_finished():
+	if animate.animation == "scare":
+		isAttacking = false;

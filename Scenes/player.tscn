@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cusyaxjyyeqt1"]
+[gd_scene load_steps=64 format=3 uid="uid://cusyaxjyyeqt1"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_ukakq"]
 [ext_resource type="Texture2D" uid="uid://dpkyyua4dwhls" path="res://animations/characters/main character/character/main_dying.png" id="2_6tr0t"]
@@ -363,10 +363,21 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_r3eib"]
+resource_name = "new_animation"
+step = 0.2
+
+[sub_resource type="Animation" id="Animation_a7ex8"]
+resource_name = "Attack"
+length = 2.0
+step = 0.2
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lss4d"]
 _data = {
+"Attack": SubResource("Animation_a7ex8"),
 "RESET": SubResource("Animation_sn0on"),
-"hurtBlink": SubResource("Animation_i7vxj")
+"hurtBlink": SubResource("Animation_i7vxj"),
+"new_animation": SubResource("Animation_r3eib")
 }
 
 [node name="SkeleyBoy" type="CharacterBody2D"]
@@ -377,6 +388,8 @@ clip_children = 2
 position = Vector2(77, 68)
 sprite_frames = SubResource("SpriteFrames_18oxe")
 animation = &"scare"
+frame = 8
+frame_progress = 0.237982
 
 [node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
 offset_left = -21.0
@@ -404,5 +417,6 @@ libraries = {
 [node name="hurtTimer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_exited" from="hurtbox" to="." method="_on_hurtbox_area_exited"]
